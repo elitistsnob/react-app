@@ -1,0 +1,59 @@
+@use './abstracts/variables' as *;
+
+.nav {
+    ul {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        @media (max-width: $breakpoint-mobile) {
+            gap: 12px;
+        }
+    }
+
+    a {
+        background-color: #fff;
+        // background-color: rgba($base-font-color, 0.05);
+        border: 1px solid rgba($base-font-color, 0.2);
+        border-radius: 4px;
+        // border-bottom: 2px solid #fff;
+        display: block;
+        font-family: 'Titillium Web SemiBold';
+        font-size: 20px;
+        padding: 8px 30px;
+        transition:
+            background-color $animation-timing ease,
+            border-color $animation-timing ease,
+            color $animation-timing ease;
+
+        &:hover {
+            background-color: $base-color;
+            border-color: $base-color;
+            color: #fff;
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+            font-size: 16px;
+            padding: 8px 20px;
+        }
+    }
+}
+
+
+// Active nav states
+.homepage .nav .home-link,
+.portfolio .nav .portfolio-link,
+.contact .nav .contact-link {
+    background-color: rgba($base-font-color, 0.05);
+}
+
+.homepage .nav .home-link:hover,
+.portfolio .nav .portfolio-link:hover,
+.contact .nav .contact-link:hover {
+    background-color: rgba($base-font-color, 0.07);
+    border-color: rgba($base-font-color, 0.3);
+    color: $base-font-color;
+}

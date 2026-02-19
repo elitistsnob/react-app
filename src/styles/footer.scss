@@ -1,0 +1,83 @@
+@use './abstracts/_variables' as *;
+@use 'sass:color';
+
+// Footer
+.footer {
+    align-items: center;
+    border-top: 1px solid color.adjust($base-font-color, $lightness: 75%);
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    justify-content: space-between;
+    margin: 90px 0;
+
+    .copyright {
+        margin: 40px 0;
+    }
+
+    .nav {
+        a {
+            background: none;
+            border: 0;
+            border-radius: 0;
+            font-weight: 400;
+            font-size: 16px;
+            padding: 0;
+
+            &:hover {
+                background: none;
+                color: $base-color;
+            }
+        }
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        flex-direction: column;
+        justify-content: center;
+
+        p {
+            order: 2;
+        }
+
+        .nav {
+            order: 1;
+            width: 100%;
+
+            ul {
+                flex-direction: column;
+                gap: 0;
+                justify-content: center;
+                text-align: center;
+
+                li {
+                    &:last-of-type a {
+                        // border-bottom: 0;
+                    }
+                }
+            }
+
+            a {
+                border-bottom: 1px solid color.adjust($base-font-color, $lightness: 75%);
+                padding: 20px 20px;
+
+                &:hover {
+                    border-color: color.adjust($base-font-color, $lightness: 75%);
+                }
+            }
+        }
+    }
+}
+
+.homepage .footer .nav .home-link,
+.portfolio .footer .nav .portfolio-link,
+.contact .footer .nav .contact-link {
+    background: none;
+}
+
+.homepage .footer .nav .home-link:hover,
+.portfolio .footer .nav .portfolio-link:hover,
+.contact .footer .nav .contact-link:hover {
+    background: none;
+    border-color: color.adjust($base-font-color, $lightness: 75%);
+    color: color.adjust($base-color, $lightness: 15%);
+}

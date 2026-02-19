@@ -1,0 +1,462 @@
+@use 'sass:color';
+@use './abstracts/fonts';
+@use './abstracts/variables' as *;
+@use './abstracts/typography.scss';
+
+@use './header.scss';
+@use './footer.scss';
+@use './nav.scss';
+@use './timeline.scss';
+@use './social.scss';
+@use './gallery.scss';
+
+:root {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    background-color: #242424;
+    color-scheme: light dark;
+    color: $base-font-color;
+    font-synthesis: none;
+    font-weight: 400;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+
+    background-image:
+        linear-gradient(#f1f1f1 0.02em, transparent 0.1em),
+        linear-gradient(90deg, #f1f1f1 0.02em, transparent 0.1em);
+    background-size: 20px 20px;
+
+    border-top: 4px solid $base-color;
+    display: flex;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 18px;
+    margin: 0;
+    min-width: 320px;
+    place-items: center;
+}
+
+button {
+    background-color: $base-color;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    color: #fff;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0.6em 1.2em;
+    transition: border-color 0.25s;
+}
+
+button:hover {
+    background-color: color.adjust($base-color, $lightness: -5%);
+    border-color: color.adjust($base-color, $lightness: -5%);
+}
+
+button:focus,
+button:focus-visible {
+    // outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+    ::selection {
+        background-color: color.adjust($base-color, $lightness: 40%);
+        color: color.adjust($base-color, $lightness: -10%);
+    }
+
+    body {
+        background-color: #fff;
+        color: $base-font-color;
+    }
+
+    :root {
+        color: $base-font-color;
+        background-color: #fff;
+    }
+
+    a:hover {
+        // color: #747bff;
+    }
+
+    button {
+        // background-color: #f9f9f9;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    ::selection {
+        background-color: color.adjust($base-color, $lightness: 40%);
+        color: color.adjust($base-color, $lightness: -10%);
+    }
+
+    body {
+        background-color: $base-font-color;
+        // background: #fff;
+		background-image:
+        linear-gradient(color.adjust($base-font-color, $lightness: 10%) 0.02em, transparent 0.1em),
+        linear-gradient(90deg, color.adjust($base-font-color, $lightness: 10%) 0.02em, transparent 0.1em);
+        color: #fff;
+    }
+
+	#root.main {
+		background: $base-font-color;
+		box-shadow: 0 -30px 60px rgba($base-font-color, 0.9);
+	}
+
+    input,
+    textarea {
+        background-color: #fff;
+        color: $base-font-color;
+    }
+
+    input:valid {
+        background-color: #fff;
+        color: $base-font-color;
+    }
+
+    :root {
+        --input-bg: #fff;
+        --input-text: $base-font-color;
+    }
+
+    .nav {
+        a {
+            background-color: $base-font-color;
+            border: 1px solid #fff;
+            color: #fff;
+        }
+    }
+
+    // Active nav states
+    .homepage .nav .home-link,
+    .portfolio .nav .portfolio-link,
+    .contact .nav .contact-link {
+        // background-color: rgba(241, 87, 34, 0.2);
+        // border-bottom: 3px solid $base-color;
+        background-color: color.adjust($base-font-color, $lightness: 15%);
+        // color: $base-color;
+    }
+
+    .homepage .nav .home-link:hover,
+    .portfolio .nav .portfolio-link:hover,
+    .contact .nav .contact-link:hover {
+        background-color: color.adjust($base-font-color, $lightness: 25%);
+        border-color: #fff;
+        color: #fff;
+    }
+
+    .social a {
+        border: 1px solid #fff;
+        color: #fff;
+
+        &:hover {
+            background-color: color.adjust($base-font-color, $lightness: 10%);
+        }
+    }
+
+    .gallery button {
+        background-color: $base-font-color;
+    }
+
+    .gallery .gallery__item {
+        border-bottom: 1px solid color.adjust($base-font-color, $lightness: 30%);
+    }
+
+    .portfolio .lightbox {
+        background: rgba(0, 0, 0, 0.75);
+    }
+
+    .portfolio .lightbox .lightbox__content p {
+        color: #fff;
+    }
+
+    .portfolio .lightbox .close {
+        color: #fff;
+    }
+
+    .timeline h3 {
+        color: #fff;
+    }
+
+    .timeline .timeline__dates {
+        background: #000;
+    }
+
+    .homepage .timeline .timeline__dates svg path {
+        fill: #fff;
+    }
+
+    .timeline h4::before {
+        background: $base-font-color;
+        content: '';
+    }
+
+    .timeline__job {
+        &:first-of-type {
+            img {
+                border-radius: 200px;
+            }
+        }
+    }
+
+    .form .form__field input,
+    .form .form__field textarea {
+        background-color: $base-font-color;
+        color: #fff;
+    }
+
+    .footer {
+        border-top: 1px solid color.adjust($base-font-color, $lightness: 30%);
+    }
+
+    .contact .modal {
+        background: $base-font-color;
+
+        p {
+            color: #fff;
+        }
+    }
+
+    .gallery__links a {
+        color: #fff;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        .footer .nav a {
+            border-bottom: 1px solid
+                color.adjust($base-font-color, $lightness: 30%);
+
+            &:hover {
+                border-color: color.adjust($base-font-color, $lightness: 30%);
+            }
+        }
+
+        .homepage .footer .nav .home-link:hover,
+        .portfolio .footer .nav .portfolio-link:hover,
+        .contact .footer .nav .contact-link:hover {
+            border-color: color.adjust($base-font-color, $lightness: 30%);
+        }
+    }
+}
+
+.site-wrapper {
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 0 2rem;
+}
+
+.main {
+    background: #fff;
+    box-shadow: 0 -30px 60px rgba(255, 255, 255, .9);
+    margin-top: 120px;
+    width: 100%;
+}
+
+.card {
+    width: 40%;
+
+    h2 {
+        // font-size: 36px;
+    }
+
+    h3 {
+        font-family: 'Titillium Web';
+        font-size: 40px;
+        font-weight: 400;
+    }
+
+    p {
+        font-size: 24px;
+
+        &:first-of-type {
+            // margin-top: 0;
+        }
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        order: 2;
+        width: 100%;
+    }
+}
+
+.content {
+    overflow: hidden;
+    width: 60%;
+
+    h2 {
+        margin-bottom: 40px;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        order: 1;
+        width: 100%;
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    gap: 130px;
+
+    @media (max-width: $breakpoint-mobile) {
+        gap: 40px;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .homepage {
+        .card {
+            order: 1;
+        }
+
+        .content {
+            order: 2;
+        }
+    }
+}
+
+// Tech badges
+.tech {
+    padding: 20px 0;
+
+    .tech__used {
+        margin-bottom: 10px;
+
+        strong {
+            font-family: 'Titillium Web SemiBold';
+            font-size: 14px;
+        }
+    }
+
+    .tech__stack__wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .tech__stack {
+        background: rgba(0, 0, 0, 0.05);
+        background: rgba($base-font-color, 0.1);
+        background: rgba($base-font-color, 1);
+        border: 1px solid rgba($base-font-color, 0.1);
+        border: 1px solid #fff;
+        border-radius: 100px;
+        color: #fff;
+		font-family: 'Titillium Web SemiBold';
+        font-size: 12px;
+        padding: 3px 12px;
+    }
+
+    &.home--tech .tech__stack {
+        font-size: 16px;
+    }
+}
+
+// Lightbox
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+    opacity: 1;
+    transition: opacity 300ms ease;
+
+    button {
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .lightbox__content {
+        p {
+            color: $base-font-color;
+            font-weight: 400;
+        }
+
+        img {
+            animation-duration: 0.2s;
+            animation-fill-mode: forwards;
+            animation-name: grow;
+            animation-timing-function: ease-out;
+            border-radius: 1em;
+            display: block;
+            margin: auto;
+            max-height: 80vh;
+            max-width: 90vh;
+            width: 100%;
+        }
+    }
+
+    .close {
+        background: none;
+        color: $base-font-color;
+        font-size: 60px;
+        font-weight: 100;
+        height: 1em;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 1em;
+        z-index: 1001;
+    }
+
+    p {
+        font-size: 2em;
+        font-weight: bold;
+        margin: 0;
+        text-align: center;
+
+        @media (max-width: $breakpoint-mobile) {
+            font-size: 18px;
+        }
+    }
+
+    @keyframes grow {
+        from {
+            transform: scale(0);
+            transform-origin: center;
+        }
+        to {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes shrink {
+        from {
+            transform: scale(1);
+            transform-origin: center;
+        }
+        to {
+            transform: scale(0);
+        }
+    }
+
+    &.closing {
+        opacity: 0;
+        transition: opacity 300ms ease;
+    }
+
+    &.closing .lightbox__content img {
+        animation-name: shrink;
+        animation-duration: 0.2s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-out;
+    }
+}

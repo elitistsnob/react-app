@@ -1,0 +1,120 @@
+@use './abstracts/_variables' as *;
+@use 'sass:color';
+
+// Timeline CSS
+.timeline {
+    // padding-left: 45px;
+    position: relative;
+
+    h3 {
+        font-size: 40px;
+    }
+
+    h4 {
+        margin: 0;
+        position: relative;
+
+        &:before {
+            background: #fff;
+            border: 2px solid $base-color;
+            border-radius: 100px;
+            content: '';
+            height: 18px;
+            position: absolute;
+            left: -42px;
+            width: 18px;
+        }
+
+        &:after {
+            background-color: $base-color;
+            content: '';
+            height: 2px;
+            left: -22px;
+            position: absolute;
+            top: 10px;
+            width: 14px;
+        }
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .timeline__roles {
+        margin-inline: 120px 0;
+        position: relative;
+    }
+
+    .timeline__role {
+        padding: 28px 0;
+        position: relative;
+
+        &:before {
+            background-color: $base-color;
+            content: '';
+            height: 100%;
+            left: -32px;
+            position: absolute;
+            width: 2px;
+        }
+
+        &:last-of-type:before {
+            display: none;
+        }
+    }
+
+    .timeline__job {
+        &.job--active h4:before {
+            background: #fff;
+            border: 2px solid $base-color;
+            border-radius: 100px;
+            content: '';
+            height: 18px;
+            position: absolute;
+            left: -42px;
+            width: 18px;
+        }
+
+        padding: 0px 0 40px;
+    }
+
+    .timeline__company {
+        display: flex;
+        // padding: 20px;
+        // border: 2px solid $base-color;
+        // border-radius: 10px;
+
+        .timeline__logo {
+            margin-right: 10px;
+            max-width: 70px;
+            width: 100%;
+
+            img {
+                max-width: 60px;
+                width: 100%;
+            }
+        }
+    }
+
+    .timeline__dates {
+        align-items: center;
+        background: color.adjust($base-font-color, $lightness: 80%);
+        border-radius: 100px;
+        display: inline-flex;
+        font-size: 14px;
+        font-weight: 600;
+        margin: 0 0 20px 0;
+        padding: 4px 15px;
+        vertical-align: middle;
+
+        svg {
+            height: 15px;
+            margin-right: 5px;
+            width: 15px;
+        }
+    }
+
+    .timeline__role__content .timeline__dates {
+        margin: 0 0 20px;
+    }
+}

@@ -1,0 +1,102 @@
+@use './abstracts/_variables' as *;
+@use 'sass:color';
+
+.header {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin-bottom: 60px;
+    margin-top: 100px;
+    margin-top: -60px;
+
+    @media (max-width: $breakpoint-mobile) {
+        gap: 20px;
+        justify-content: center;
+        margin-top: -50px;
+
+        .nav ul {
+            justify-content: center;
+        }
+
+        .nav li {
+            width: 100%;
+        }
+    }
+
+    h2 {
+        border-bottom: 4px solid $base-color;
+        color: color.adjust($base-font-color, $lightness: 40%);
+        font-family: 'Titillium Web';
+        font-size: 39px;
+        font-weight: 400;
+        margin: -20px 0 20px;
+        padding: 0 0 15px;
+    }
+
+    .header__logo {
+        background: #fff;
+        border: 2px solid #ddd;
+        border-radius: 200px;
+        padding: 11px;
+        box-shadow: 0 10px 13px rgba(0, 0, 0, 0.1);
+        max-height: 150px;
+        max-width: 150px;
+        transition: transform $animation-timing ease-in-out;
+        width: 100%;
+
+        &:hover {
+            transform: scale(1.03);
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+            margin: 0 auto;
+            max-height: 130px;
+            max-width: 130px;
+        }
+
+        a {
+            display: block;
+            outline: none;
+        }
+
+        svg {
+            width: 100%;
+        }
+    }
+
+    .header__info {
+        display: flex;
+        flex-direction: column;
+
+        @media (max-width: $breakpoint-mobile) {
+            justify-content: center;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        justify-content: center;
+
+        h1 {
+            // font-size: 46px;
+        }
+
+        h2 {
+            // font-size: 24px;
+            margin: 0px 0 20px;
+        }
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        flex-direction: column;
+
+        h1 {
+            font-size: 46px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin: 0px 0 20px;
+        }
+    }
+}
