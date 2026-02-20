@@ -2,7 +2,7 @@ const projects = [
     {
         id: 1,
         title: 'Pyscript.net',
-        desc: 'Designed a built a website for Pyscript.net a platform for creating and running Python scripts in the browser.',
+        desc: 'Designed and built a website for Pyscript.net, a platform for creating and running Python scripts in the browser.',
         src: '/images/portfolio/pyscript-net.webp',
         alt: 'Screenshot of Pyscript website',
         tech: [
@@ -47,7 +47,7 @@ const projects = [
     {
         id: 3,
         title: 'Gitlab Theme for Typora',
-        desc: 'I designed and implemented this custom Gitlab theme for <a href="https://typora.io/">Typora</a>. A popular markdown editor for Mac, Windows, and Linux. It has proven so popular among users, it was been downloaded by tens of thousands of users.',
+        desc: 'I designed and implemented this custom Gitlab theme for <a href="https://typora.io/">Typora</a>, a popular Markdown editor for Mac, Windows, and Linux. It has proven so popular among users, it has been downloaded by tens of thousands of users.',
         src: '/images/portfolio/gitlab.webp',
         alt: 'Screenshot of Gitlab theme for Typora',
         tech: [
@@ -122,7 +122,7 @@ const projects = [
     {
         id: 6,
         title: 'Iotron',
-        desc: 'While employed by Reusser Design, I created a website for Iotron inc. An innovative industrial technology company that specializes is radiology.',
+        desc: 'While employed by Reusser Design, I created a website for Iotron Inc., an innovative industrial technology company that specializes in radiology.',
         src: '/images/portfolio/iotron.webp',
         alt: 'Screenshot of Iotron website',
         tech: [
@@ -143,7 +143,7 @@ const projects = [
     {
         id: 7,
         title: 'Closet Tamers',
-        desc: 'Designed a built a website for Closet Tamers, a company that creates custom closet interiors and storage solutions for business and consumers.',
+        desc: 'Designed and built a website for Closet Tamers, a company that creates custom closet interiors and storage solutions for business and consumers.',
         src: '/images/portfolio/closettamers.webp',
         alt: 'Screenshot of Closet Tamers website',
         tech: [
