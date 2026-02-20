@@ -3,18 +3,21 @@
 @font-face {
     font-family: 'Titillium Web';
     src: url('../../assets/fonts/titillium/TitilliumWeb-Regular.ttf');
+    font-weight: 400;
 }
 
 // body font semibold - 600
 @font-face {
     font-family: 'Titillium Web SemiBold';
     src: url('../../assets/fonts/titillium/TitilliumWeb-SemiBold.ttf');
+    font-weight: 600;
 }
 
 // body font bold - 700
 @font-face {
     font-family: 'Titillium Web Bold';
     src: url('../../assets/fonts/titillium/TitilliumWeb-Bold.ttf');
+    font-weight: 700;
 }
 
 // headline font
