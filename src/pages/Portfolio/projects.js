@@ -2,7 +2,7 @@ const projects = [
     {
         id: 1,
         title: 'Pyscript.net',
-        desc: 'Designed a built a website for Pyscript.net a platform for creating and running Pythonscripts in the browser.',
+        desc: 'Designed a built a website for Pyscript.net a platform for creating and running Python scripts in the browser.',
         src: '/images/portfolio/pyscript-net.webp',
         alt: 'Screenshot of Pyscript website',
         tech: [
