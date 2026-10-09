@@ -1,6 +1,27 @@
 const jobs = [
     {
         id: 1,
+        company: 'Genesys',
+        summary: 'A global technology company that provides enterprise-level AI-driven customer experience (CX) and contact center software.',
+        history: 'Current',
+        link: 'https://www.genesys.com',
+        src: '/images/timeline/genesys_logo.jpg',
+        roles: [
+            {
+                title: 'Sr. Software Engineer, web',
+                desc: 'Maintain and enhance an existing CMS-driven corporate website while architecting and developing a new, scalable website architecture built on latest technology.',
+                years: 'SEP 2026 - Current',
+            },
+            {
+                title: 'Sr. Front-end Engineer',
+                desc: 'Worked on maintainging corporate website, developing new feature experiences and interactive customer journeys.',
+                years: 'MAY 2026 - SEP 2026',
+            },
+        ],
+
+    },
+    {
+        id: 1,
         company: 'Anaconda Inc.',
         summary: 'Anaconda is the world\'s largest commercial distrubtor of <strong>Python</strong>, and are a leading SaaS company in the Data Science and AI space.',
         history: '5 years',
